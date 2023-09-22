@@ -46,7 +46,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
       
 <br/>
 
-- [Visite o projeto online](https://iaraMarques.github.io/Blog-de-Gatos)
+- [Visite o projeto online](http://blog-de-gatos-iaraMarques.vercel.app)
 
 <br/>
 
