@@ -1,0 +1,282 @@
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    font-size: 62.5%;
+  
+   --color-base-container:#065E7C;
+   --color-base-container2:#073b4d;
+   --color-base-input:rgb(255, 255, 255, 0.20);
+   --color-base-gray-100:#ffffff;
+   --color-base-gray-500: #c5c2da;
+   --color-base-gray-300:#ababb4;
+   --color-base-gray-900: black;
+}
+
+html, body, input {
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  background-color: var(--color-base-container);
+  font-size: 1.6rem;
+  color: var(--color-base-gray-900);
+}
+
+#app {
+  display: grid;
+  /*
+  grid-template-columns: repeat(3 , 1fr);
+  grid-template-rows: repeat(3 , 1fr);
+  */
+  grid-template-areas: 
+  "header header header"
+  "main main aside"
+  "main main aside"
+  "footer footer footer"
+  ;
+  height: 100vh;
+}
+
+#app > header {
+  /* grid-column-start:1;
+  grid-column-end:4;*/
+  grid-area: header;
+}
+
+#app > main {
+  /*grid-column:1/3*/
+  grid-area: main;
+}
+
+#app > aside {
+  /*grid-column:3/4*/
+  grid-area: aside;
+}
+
+#app > footer {
+  /*grid-column:1/4*/
+  grid-area: footer;
+}
+
+header {
+  padding: 1.2rem 11.2rem;
+  display: flex;
+  justify-content: center;
+  height: 7.2rem;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem ;
+  font-weight: 700;
+}
+
+.input-wrapper label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.input-wrapper input {
+  padding: 1.2rem 0 1.2rem 0;
+  background-color:var(--color-base-input) ;
+  border: 0;
+  border-radius:.6rem;
+  width: 100vh;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.input-wrapper input::placeholder {
+  padding-left:1.4rem;
+  opacity: 0.65;
+  color: var(--color-base-gray-100);
+  width: 100vh;
+}
+
+.avatar {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+main {
+  background-color: var(--color-base-gray-100);
+  padding: 4.4rem 3.4rem 3.9rem 11rem;
+  display: grid;
+  grid-template-areas:
+  "a a a"
+  "b b c"
+  "d d d" ;
+}
+
+main img {
+  grid-area: a;
+  width: 100%;
+}
+
+main img:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+}
+
+main h1 {
+  padding-top: 3.1rem;
+  grid-area: b;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+section {
+  padding-top: 3.1rem;
+  display: flex;
+  justify-content: end;
+  gap: 1.2rem;
+}
+
+section > button {
+  grid-area: c;
+  padding: 1.2rem;
+  background-color: var(--color-base-container);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+section > button:hover {
+  background: var(--color-base-container2);
+  transform: scale(1.1);
+}
+
+main p {
+  grid-area: d;
+  padding-top: 3rem;
+  font-size: 1.6rem;
+}
+
+aside {
+  padding: 4.4rem 11.2rem 3.2rem 0;
+   background-color: var(--color-base-gray-100);
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 3.2rem;
+}
+
+aside h1 {
+  grid-area: a;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.cards {
+  padding-top: 3.2rem;
+  display:grid;
+  grid-template-columns:repeat(1, 1fr);
+  gap: 3.2rem;
+}
+
+.card {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+  "a a b"
+  "a a c";
+  gap: 1.6rem 1.3rem;
+}
+
+.card:hover {
+  filter: hue-rotate(7deg) contrast(101%) saturate(200%);
+  transform: scale(1.1);
+}
+
+.card > img {
+  grid-area: a;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: .5rem;
+}
+
+.card > h2 {
+  grid-area: b;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.card > p {
+  width: 21.7rem;
+  grid-area: c;
+  font-size: 1.4rem;
+}
+
+footer {
+  height: 6.4rem;
+  text-align: center;
+  padding: 1.6rem 1.6rem;
+  color: var(--color-base-gray-100);
+
+  font-family: Mulish;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media (max-width: 768px)  {
+
+  #app {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 0;
+  }
+  
+  nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem ;
+    padding: 1.2rem 2.8rem;
+  }
+
+  .input-wrapper input {
+
+    width: 100%;
+  }
+
+  main {
+    background-color: var(--color-base-gray-100);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  main h1 {
+    padding-left: 2.2rem;
+  }
+
+  section {
+    padding: .8rem 0 3.1rem 2.2rem;
+  }
+
+  main p {
+    padding: 0 2.6rem 3.4rem 2.2rem;
+  }
+
+  aside {
+  padding: 0 2.6rem 3.9rem 2.2rem;
+  }
+
+  
+}
