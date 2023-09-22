@@ -15,8 +15,6 @@
 
 <p align="center">
   <img alt="final-layout-tablet-version" src="./assets/gatos.png" width="100%" >
-  
-  <img alt="final-layout-desktop-version" src="images/desktop1.png" width="90%" >  
 </p>
 
 ## 🚀 Tecnologias
